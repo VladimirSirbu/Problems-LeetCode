@@ -1,7 +1,7 @@
-package algorithms.tests.string;
+package algorithms.tests.string.easy;
 
 import org.junit.Test;
-import string.RomanToInteger;
+import string.easy.RomanToInteger;
 import static org.junit.Assert.assertEquals;
 
 public class TestRomanToInteger {

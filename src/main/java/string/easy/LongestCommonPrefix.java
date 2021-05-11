@@ -1,4 +1,4 @@
-package string;
+package string.easy;
 
 public class LongestCommonPrefix {
     // Aproach 1 (own)

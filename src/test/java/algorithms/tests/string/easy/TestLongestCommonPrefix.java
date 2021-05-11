@@ -1,7 +1,7 @@
-package algorithms.tests.string;
+package algorithms.tests.string.easy;
 
 import org.junit.Test;
-import string.LongestCommonPrefix;
+import string.easy.LongestCommonPrefix;
 import static org.junit.Assert.assertEquals;
 
 public class TestLongestCommonPrefix {

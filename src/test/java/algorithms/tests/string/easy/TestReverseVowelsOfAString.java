@@ -1,8 +1,8 @@
-package algorithms.tests.string;
+package algorithms.tests.string.easy;
 
 import org.junit.Assert;
 import org.junit.Test;
-import string.ReverseVowelsOfAString;
+import string.easy.ReverseVowelsOfAString;
 
 public class TestReverseVowelsOfAString {
 
