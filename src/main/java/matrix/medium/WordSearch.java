@@ -20,6 +20,7 @@ public class WordSearch {
         while (flag) {
 
         }
+        return false;
     }
 
     private void searchNextLetterInAdjacentCell(char[][] board, int i, int j) {
