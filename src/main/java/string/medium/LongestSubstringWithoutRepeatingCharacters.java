@@ -1,7 +1,9 @@
 package string.medium;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 
 public class LongestSubstringWithoutRepeatingCharacters {
@@ -23,6 +25,28 @@ public class LongestSubstringWithoutRepeatingCharacters {
             }
             maxLenSubStr = Math.max(maxLenSubStr, s.substring(i, j).length());
             map.clear();
+        }
+        return maxLenSubStr;
+    }
+
+    // Aproach 2 (using Window Sliding Technique)
+    public int lengthOfLongestSubstring1(String s) {
+        if (s.isEmpty() || s == null)
+            return 0;
+
+        int maxLenSubStr = 0; /* keep track of the maximum length substring that we come across that has no repeating characters */
+        int windowLength, j = 0, i = 0; // actual window length
+        Set<Character> set = new HashSet<>(); // keep track of the UNIQUE characters that we see in our window
+
+        while (i < s.length()) {
+            if (set.add(s.charAt(i))) {
+                windowLength = set.size();
+                maxLenSubStr = Math.max(windowLength,maxLenSubStr);
+                i++;
+            } else {
+                set.remove(s.charAt(j));
+                j++;
+            }
         }
         return maxLenSubStr;
     }
