@@ -1,5 +1,7 @@
 package linkedlist.easy;
 
+import linkedlist.ListNode;
+
 public class ConvertBinaryNumberInALinkedListToInteger {
 
     // Aproach 1 (own)

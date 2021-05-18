@@ -1,5 +1,7 @@
 package linkedlist.easy;
 
+import linkedlist.ListNode;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +11,8 @@ public class PalindromeLinkedList {
     public boolean isPalindrome(ListNode head) {
         StringBuilder sb = new StringBuilder();
         while (head != null) {
-            sb.append(head.getVal());
-            head = head.getNext();
+            sb.append(head.val);
+            head = head.next;
         }
         return sb.toString().equals(sb.reverse().toString());
     }
@@ -20,17 +22,17 @@ public class PalindromeLinkedList {
         List<Integer> list = new ArrayList<>();
         ListNode current = head;
         while (current != null) {
-            list.add(current.getVal());
-            current = current.getNext();
+            list.add(current.val);
+            current = current.next;
         }
 
         current = head;
         int index = list.size() - 1;
 
         while (current != null & index >= 0) {
-            if (current.getVal() != list.get(index))
+            if (current.val != list.get(index))
                 return false;
-            current = current.getNext();
+            current = current.next;
             index--;
         }
         return true;
