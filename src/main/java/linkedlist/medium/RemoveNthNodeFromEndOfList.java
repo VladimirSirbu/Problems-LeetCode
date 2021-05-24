@@ -3,7 +3,9 @@ package linkedlist.medium;
 import linkedlist.ListNode;
 
 public class RemoveNthNodeFromEndOfList {
-    public ListNode removeNthFromEnd(ListNode head, int n) {
+
+    // Approach 1
+    public ListNode removeNthFromEnd1(ListNode head, int n) {
         // create a new node that point to head
         // dummy is used to simplify some corner cases such as a list with only one node
         ListNode dummy = new ListNode(0);
@@ -21,6 +23,28 @@ public class RemoveNthNodeFromEndOfList {
             first = first.next;
         }
         first.next = first.next.next;
+        return dummy.next;
+    }
+
+    // Approach 2
+    public ListNode removeNthFromEnd2(ListNode head, int n) {
+        ListNode dummy = new ListNode(0,head);
+        ListNode back = dummy;
+        ListNode ahead = dummy;
+        int i = 0;
+
+        while (i < n + 1) {
+            ahead = ahead.next;
+            i++;
+        }
+
+        while (ahead != null) {
+            ahead = ahead.next;
+            back = back.next;
+        }
+
+        back.next = back.next.next;
+
         return dummy.next;
     }
 }

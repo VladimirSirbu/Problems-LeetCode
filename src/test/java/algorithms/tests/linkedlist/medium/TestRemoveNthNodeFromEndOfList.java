@@ -18,7 +18,7 @@ public class TestRemoveNthNodeFromEndOfList {
         ListNode nodeToCompare = initList(5,3,2,1);
         int nThNode = 2;
 
-        ListNode removeNode = remove.removeNthFromEnd(InitNode,nThNode);
+        ListNode removeNode = remove.removeNthFromEnd1(InitNode,nThNode);
 
         assertTrue(removeNode.equals(nodeToCompare));
     }
@@ -29,7 +29,7 @@ public class TestRemoveNthNodeFromEndOfList {
         ListNode nodeToCompare = initList(1);
         int nThNode = 1;
 
-        ListNode removeNode = remove.removeNthFromEnd(InitNode,nThNode);
+        ListNode removeNode = remove.removeNthFromEnd1(InitNode,nThNode);
 
         assertTrue(removeNode.equals(nodeToCompare));
     }
@@ -40,7 +40,42 @@ public class TestRemoveNthNodeFromEndOfList {
         ListNode nodeToCompare = initList();
         int nThNode = 1;
 
-        ListNode removeNode = remove.removeNthFromEnd(InitNode,nThNode);
+        ListNode removeNode = remove.removeNthFromEnd1(InitNode,nThNode);
+
+        assertSame(removeNode, nodeToCompare);
+    }
+
+    // ==================================================================================
+
+    @Test
+    public void testRemoveNthFromEnd4() {
+        ListNode InitNode = initList(5,4,3,2,1);
+        ListNode nodeToCompare = initList(5,3,2,1);
+        int nThNode = 2;
+
+        ListNode removeNode = remove.removeNthFromEnd2(InitNode,nThNode);
+
+        assertTrue(removeNode.equals(nodeToCompare));
+    }
+
+    @Test
+    public void testRemoveNthFromEnd5() {
+        ListNode InitNode = initList(2,1);
+        ListNode nodeToCompare = initList(1);
+        int nThNode = 1;
+
+        ListNode removeNode = remove.removeNthFromEnd2(InitNode,nThNode);
+
+        assertTrue(removeNode.equals(nodeToCompare));
+    }
+
+    @Test
+    public void testRemoveNthFromEnd6() {
+        ListNode InitNode = initList(1);
+        ListNode nodeToCompare = initList();
+        int nThNode = 1;
+
+        ListNode removeNode = remove.removeNthFromEnd2(InitNode,nThNode);
 
         assertSame(removeNode, nodeToCompare);
     }
