@@ -13,6 +13,7 @@ public class TestBinaryTreeInorderTraversal {
 
     private BinaryTreeInorderTraversal traversal = new BinaryTreeInorderTraversal();
 
+    /** Testing Aproach 1 (recursive) **/
     @Test
     public void testInorderTraversal1() {
         Tree tree = new Tree();
@@ -50,5 +51,45 @@ public class TestBinaryTreeInorderTraversal {
         List<Integer> expectedInOrderElements = Arrays.asList(1,2);
 
         assertEquals(expectedInOrderElements, traversal.inorderTraversal(tree.root));
+    }
+
+    /** Testing Aproach 2 (iterative) **/
+    @Test
+    public void testInorderTraversal5() {
+        Tree tree = new Tree();
+        for (int i = 1; i < 4; i++) {
+            tree.insert(i);
+        }
+        List<Integer> expectedInOrderElements = Arrays.asList(1,2,3);
+
+        assertEquals(expectedInOrderElements, traversal.inorderTraversalIterative(tree.root));
+    }
+
+    @Test
+    public void testInorderTraversal6() {
+        Tree tree = new Tree();
+        List<Integer> expectedInOrderElements = Collections.emptyList();
+        assertEquals(expectedInOrderElements, traversal.inorderTraversalIterative(tree.root));
+    }
+
+    @Test
+    public void testInorderTraversal7() {
+        Tree tree = new Tree();
+        tree.insert(1);
+
+        List<Integer> expectedInOrderElements = Arrays.asList(1);
+
+        assertEquals(expectedInOrderElements, traversal.inorderTraversalIterative(tree.root));
+    }
+
+    @Test
+    public void testInorderTraversal8() {
+        Tree tree = new Tree();
+        tree.insert(1);
+        tree.insert(2);
+
+        List<Integer> expectedInOrderElements = Arrays.asList(1,2);
+
+        assertEquals(expectedInOrderElements, traversal.inorderTraversalIterative(tree.root));
     }
 }
