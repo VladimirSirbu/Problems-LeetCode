@@ -30,6 +30,7 @@ public class TestIncreasingOrderSearchTree {
             expectedTree.insert(i);
         }
 
-        assertEquals(expectedTree.root, incSearchTree.increasingBST(givenTree.root));
+        assertEquals(expectedTree.root, incSearchTree.increasingBST1(givenTree.root));
+        assertEquals(expectedTree.root, incSearchTree.increasingBST2(givenTree.root));
     }
 }
