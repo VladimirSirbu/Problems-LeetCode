@@ -1,11 +1,13 @@
 package string.easy;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
 public class IsomorphicStrings {
 
-    /** Approach 1 */
+    /** Approach 1 (own) */
     public boolean isIsomorphic(String s, String t) {
         if (s.length() != t.length())
             return false;
@@ -18,5 +20,31 @@ public class IsomorphicStrings {
         }
 
         return t.equals(newStr.toString());
+    }
+
+    /** Aproach 2 */
+    public boolean isIsomorphic2(String s, String t) {
+        if (s.length() != t.length())
+            return false;
+
+        int[] dictionarStoT = new int[256];
+        int[] dictionarTtoS = new int[256];
+        Arrays.fill(dictionarStoT, -1);
+        Arrays.fill(dictionarTtoS, -1);
+
+        for (int i = 0; i < s.length(); i++) {
+            char ch1 = s.charAt(i);
+            char ch2 = t.charAt(i);
+
+            if (dictionarStoT[ch1] == -1 && dictionarTtoS[ch2] == -1) {
+                dictionarStoT[ch1] = ch2;
+                dictionarTtoS[ch2] = ch1;
+            }
+
+            if (!(dictionarStoT[ch1] == ch2 && dictionarTtoS[ch2] == ch1))
+                return false;
+
+        }
+        return true;
     }
 }

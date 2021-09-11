@@ -13,5 +13,6 @@ public class IsomorphicStringsTest {
         Assert.assertTrue(isomorphicStrings.isIsomorphic("egg", "add"));
         Assert.assertFalse(isomorphicStrings.isIsomorphic("foo", "bar"));
         Assert.assertTrue(isomorphicStrings.isIsomorphic("paper", "title"));
+        Assert.assertFalse(isomorphicStrings.isIsomorphic("badc", "baba"));
     }
 }
