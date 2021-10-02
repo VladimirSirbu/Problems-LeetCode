@@ -49,4 +49,23 @@ public class ValidAnagram {
 
         return mapS.equals(mapT);
     }
+
+    // approach 3 (from leetcode)
+    public boolean isAnagram2(String s, String t) {
+        if (s.length() != t.length())
+            return false;
+
+        int[] v = new int[26];
+
+        for (int i = 0; i < s.length(); i++) {
+            v[s.charAt(i) - 'a']++;
+            v[t.charAt(i) - 'a']--;
+        }
+
+        for (int i = 0; i < s.length(); i++) {
+            if (v[s.charAt(i) - 'a'] != 0)
+                return false;
+        }
+        return true;
+    }
 }

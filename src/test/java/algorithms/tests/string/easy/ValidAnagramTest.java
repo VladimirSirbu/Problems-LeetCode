@@ -21,4 +21,11 @@ public class ValidAnagramTest {
         Assert.assertFalse(anagram.isAnagram1("rat","car"));
         Assert.assertFalse(anagram.isAnagram1("aacc","ccac"));
     }
+
+    @Test
+    public void testIsAnagram2() {
+        Assert.assertTrue(anagram.isAnagram2("anagram", "nagaram"));
+        Assert.assertFalse(anagram.isAnagram2("rat","car"));
+        Assert.assertFalse(anagram.isAnagram2("aacc","ccac"));
+    }
 }
